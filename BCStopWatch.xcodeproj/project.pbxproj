@@ -13,15 +13,32 @@
 		4A6C20232927192600135080 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20112927192400135080 /* ContentView.swift */; };
 		4A6C20242927192600135080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C20122927192600135080 /* Assets.xcassets */; };
 		4A6C20252927192600135080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C20122927192600135080 /* Assets.xcassets */; };
+		4A6C202F2927B72C00135080 /* StopWatchClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C202E2927B72C00135080 /* StopWatchClass.swift */; };
+		4A6C20302927B72C00135080 /* StopWatchClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C202E2927B72C00135080 /* StopWatchClass.swift */; };
+		4A6C20332927B91400135080 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20312927B91400135080 /* StoreView.swift */; };
+		4A6C20342927B91400135080 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20312927B91400135080 /* StoreView.swift */; };
+		4A6C20352927B91400135080 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20322927B91400135080 /* View.swift */; };
+		4A6C20362927B91400135080 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20322927B91400135080 /* View.swift */; };
+		4A6C20382927B92A00135080 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20372927B92A00135080 /* FirstLaunch.swift */; };
+		4A6C20392927B92A00135080 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20372927B92A00135080 /* FirstLaunch.swift */; };
+		7DC743311CC1F1F082174352 /* Pods_BCStopWatch__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F82DA21544D8D8380209C77 /* Pods_BCStopWatch__iOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		25E255A32DD063AFB492FA71 /* Pods-BCStopWatch (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCStopWatch (iOS).debug.xcconfig"; path = "Target Support Files/Pods-BCStopWatch (iOS)/Pods-BCStopWatch (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		4A6C20102927192400135080 /* BCStopWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCStopWatchApp.swift; sourceTree = "<group>"; };
 		4A6C20112927192400135080 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A6C20122927192600135080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A6C20172927192600135080 /* BCStopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCStopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6C201D2927192600135080 /* BCStopWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCStopWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6C201F2927192600135080 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		4A6C202E2927B72C00135080 /* StopWatchClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchClass.swift; sourceTree = "<group>"; };
+		4A6C20312927B91400135080 /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		4A6C20322927B91400135080 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		4A6C20372927B92A00135080 /* FirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		4A6C203A2927BE2700135080 /* BCStopWatch--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BCStopWatch--iOS--Info.plist"; sourceTree = "<group>"; };
+		9F82DA21544D8D8380209C77 /* Pods_BCStopWatch__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCStopWatch__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C946A71EF993AF9517A9979D /* Pods-BCStopWatch (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCStopWatch (iOS).release.xcconfig"; path = "Target Support Files/Pods-BCStopWatch (iOS)/Pods-BCStopWatch (iOS).release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC743311CC1F1F082174352 /* Pods_BCStopWatch__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,20 +60,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01562598C2A8B8617975D453 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25E255A32DD063AFB492FA71 /* Pods-BCStopWatch (iOS).debug.xcconfig */,
+				C946A71EF993AF9517A9979D /* Pods-BCStopWatch (iOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4A6C200A2927192400135080 = {
 			isa = PBXGroup;
 			children = (
+				4A6C203A2927BE2700135080 /* BCStopWatch--iOS--Info.plist */,
 				4A6C200F2927192400135080 /* Shared */,
 				4A6C201E2927192600135080 /* macOS */,
 				4A6C20182927192600135080 /* Products */,
+				01562598C2A8B8617975D453 /* Pods */,
+				8F5990B806E9C48C3EF46C84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		4A6C200F2927192400135080 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4A6C20372927B92A00135080 /* FirstLaunch.swift */,
 				4A6C20102927192400135080 /* BCStopWatchApp.swift */,
 				4A6C20112927192400135080 /* ContentView.swift */,
+				4A6C20322927B91400135080 /* View.swift */,
+				4A6C20312927B91400135080 /* StoreView.swift */,
+				4A6C202E2927B72C00135080 /* StopWatchClass.swift */,
 				4A6C20122927192600135080 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -78,6 +112,14 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		8F5990B806E9C48C3EF46C84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F82DA21544D8D8380209C77 /* Pods_BCStopWatch__iOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A6C20282927192600135080 /* Build configuration list for PBXNativeTarget "BCStopWatch (iOS)" */;
 			buildPhases = (
+				801B350656DF218291BC6D37 /* [CP] Check Pods Manifest.lock */,
 				4A6C20132927192600135080 /* Sources */,
 				4A6C20142927192600135080 /* Frameworks */,
 				4A6C20152927192600135080 /* Resources */,
+				781A1554D80D67DD91F3AD39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,12 +215,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		781A1554D80D67DD91F3AD39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCStopWatch (iOS)/Pods-BCStopWatch (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCStopWatch (iOS)/Pods-BCStopWatch (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCStopWatch (iOS)/Pods-BCStopWatch (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		801B350656DF218291BC6D37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BCStopWatch (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A6C20132927192600135080 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6C202F2927B72C00135080 /* StopWatchClass.swift in Sources */,
 				4A6C20222927192600135080 /* ContentView.swift in Sources */,
+				4A6C20352927B91400135080 /* View.swift in Sources */,
+				4A6C20382927B92A00135080 /* FirstLaunch.swift in Sources */,
+				4A6C20332927B91400135080 /* StoreView.swift in Sources */,
 				4A6C20202927192600135080 /* BCStopWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +275,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6C20302927B72C00135080 /* StopWatchClass.swift in Sources */,
 				4A6C20232927192600135080 /* ContentView.swift in Sources */,
+				4A6C20362927B91400135080 /* View.swift in Sources */,
+				4A6C20392927B92A00135080 /* FirstLaunch.swift in Sources */,
+				4A6C20342927B91400135080 /* StoreView.swift in Sources */,
 				4A6C20212927192600135080 /* BCStopWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +398,7 @@
 		};
 		4A6C20292927192600135080 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E255A32DD063AFB492FA71 /* Pods-BCStopWatch (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,11 +407,14 @@
 				DEVELOPMENT_TEAM = TGPVYURU8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BCStopWatch--iOS--Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "「許可」するとあなたに無関係な広告が表示されにくくなります。（許可しなくてもアプリの全ての機能は利用可能です。）";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,12 +426,13 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		4A6C202A2927192600135080 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C946A71EF993AF9517A9979D /* Pods-BCStopWatch (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,11 +441,14 @@
 				DEVELOPMENT_TEAM = TGPVYURU8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BCStopWatch--iOS--Info.plist";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "「許可」するとあなたに無関係な広告が表示されにくくなります。（許可しなくてもアプリの全ての機能は利用可能です。）";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,7 +460,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
