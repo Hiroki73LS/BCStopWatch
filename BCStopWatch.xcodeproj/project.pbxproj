@@ -21,6 +21,9 @@
 		4A6C20362927B91400135080 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20322927B91400135080 /* View.swift */; };
 		4A6C20382927B92A00135080 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20372927B92A00135080 /* FirstLaunch.swift */; };
 		4A6C20392927B92A00135080 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6C20372927B92A00135080 /* FirstLaunch.swift */; };
+		4A6C203C292914FF00135080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C203B292914FF00135080 /* GoogleService-Info.plist */; };
+		4A6C203D292914FF00135080 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A6C203B292914FF00135080 /* GoogleService-Info.plist */; };
+		4A6C20402929156400135080 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A6C203F2929156400135080 /* FirebaseAnalytics */; };
 		7DC743311CC1F1F082174352 /* Pods_BCStopWatch__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F82DA21544D8D8380209C77 /* Pods_BCStopWatch__iOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +40,7 @@
 		4A6C20322927B91400135080 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		4A6C20372927B92A00135080 /* FirstLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		4A6C203A2927BE2700135080 /* BCStopWatch--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BCStopWatch--iOS--Info.plist"; sourceTree = "<group>"; };
+		4A6C203B292914FF00135080 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F82DA21544D8D8380209C77 /* Pods_BCStopWatch__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCStopWatch__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C946A71EF993AF9517A9979D /* Pods-BCStopWatch (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCStopWatch (iOS).release.xcconfig"; path = "Target Support Files/Pods-BCStopWatch (iOS)/Pods-BCStopWatch (iOS).release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6C20402929156400135080 /* FirebaseAnalytics in Frameworks */,
 				7DC743311CC1F1F082174352 /* Pods_BCStopWatch__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +89,7 @@
 		4A6C200F2927192400135080 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4A6C203B292914FF00135080 /* GoogleService-Info.plist */,
 				4A6C20372927B92A00135080 /* FirstLaunch.swift */,
 				4A6C20102927192400135080 /* BCStopWatchApp.swift */,
 				4A6C20112927192400135080 /* ContentView.swift */,
@@ -138,6 +144,9 @@
 			dependencies = (
 			);
 			name = "BCStopWatch (iOS)";
+			packageProductDependencies = (
+				4A6C203F2929156400135080 /* FirebaseAnalytics */,
+			);
 			productName = "BCStopWatch (iOS)";
 			productReference = 4A6C20172927192600135080 /* BCStopWatch.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 4A6C200A2927192400135080;
+			packageReferences = (
+				4A6C203E2929156400135080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 4A6C20182927192600135080 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -202,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A6C20242927192600135080 /* Assets.xcassets in Resources */,
+				4A6C203C292914FF00135080 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A6C20252927192600135080 /* Assets.xcassets in Resources */,
+				4A6C203D292914FF00135080 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,11 +417,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TGPVYURU8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BCStopWatch--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LiveWatch;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "「許可」するとあなたに無関係な広告が表示されにくくなります。（許可しなくてもアプリの全ての機能は利用可能です。）";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -415,7 +430,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,11 +452,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = TGPVYURU8B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "BCStopWatch--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = LiveWatch;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "「許可」するとあなたに無関係な広告が表示されにくくなります。（許可しなくてもアプリの全ての機能は利用可能です。）";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -449,7 +465,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,6 +568,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A6C203E2929156400135080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A6C203F2929156400135080 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A6C203E2929156400135080 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A6C200B2927192400135080 /* Project object */;
 }
