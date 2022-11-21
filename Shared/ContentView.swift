@@ -40,10 +40,10 @@ struct ContentView: View {
     
     var body: some View {
         
-        if UIScreen.main.bounds.size.height == 375.0 {
+        HStack{
+            Spacer().frame(width: 25)
             
-            HStack{
-                Spacer().frame(width: 25)
+            if UIScreen.main.bounds.size.height == 375.0 {
                 
                 VStack {
                     Spacer()
@@ -85,7 +85,7 @@ struct ContentView: View {
                                 .preferredColorScheme(isDark ? .dark : .light)
                             Spacer()
                                 .frame(width: 50)
-
+                            
                         }.frame(width: (screen?.width ?? 100) * 0.60)
                     }
                     Spacer()
@@ -197,191 +197,160 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
-                //            .border(Color.pink, width: 3)
                 Spacer().frame(width: 25)
-            }.ignoresSafeArea(edges: [.bottom , .top ])
-            //        .border(Color.blue, width: 3)
-                .fullScreenCover(isPresented: self.$isActive){
-                    FirstLaunch(isAActive: $isActive, firstLaunch2: $firstLaunch)
-                        .onDisappear{
-                            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-                                GADMobileAds.sharedInstance().start(completionHandler: nil)
-                            })
-                        }
+            } else {
+                
+                VStack {
+                    Spacer()
+                    clockFace(isDark: $isDark, currentTime: $currentTime)
+                    Spacer()
+                    Text(getTime())
+                    Text(String(format: "%02d:%02d.%02d",currentTime.hour, currentTime.min, currentTime.sec))      // HH:mm:ssで表示する
+                        .font(Font(UIFont.monospacedDigitSystemFont(ofSize: 50, weight: .heavy)))   //等幅フォントを指定（時刻変化でサイズが変わらないように
+                        .foregroundColor(Color("Colormoji"))
+                    Spacer()
                 }
-                .onAppear(perform: {
-                    //--------○回起動毎にレビューを促す--------
-                    kidou += 1
-                    if kidou <= 60 {
-                        if kidou % 30 == 0 {
-                            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                                SKStoreReviewController.requestReview(in: scene)
-                            }
-                        }
-                    }
-                    //--------○回起動毎にレビューを促す--------
+                //        .border(Color.gray, width: 3)
+                VStack{
                     
-                    screen = UIScreen.main.bounds.size
-                    getTimeComponents()
-                    if firstLaunch {
-                        isActive = true
-                    }
-                })
-                .onReceive(receiver) { _ in
-                    getTimeComponents()
-                }
-    } else {
-        HStack{
-            Spacer().frame(width: 25)
-            
-            VStack {
-                Spacer()
-                clockFace(isDark: $isDark, currentTime: $currentTime)
-                Spacer()
-                Text(getTime())
-                Text(String(format: "%02d:%02d.%02d",currentTime.hour, currentTime.min, currentTime.sec))      // HH:mm:ssで表示する
-                    .font(Font(UIFont.monospacedDigitSystemFont(ofSize: 50, weight: .heavy)))   //等幅フォントを指定（時刻変化でサイズが変わらないように
-                    .foregroundColor(Color("Colormoji"))
-                Spacer()
-            }
-            //        .border(Color.gray, width: 3)
-            VStack{
-                
-                if lap234Purchase == "false"
-                {
-                    Spacer()
-                        .frame(height: 5)
-                    HStack{
-                        AdView()
-                            .frame(height: 50)
+                    if lap234Purchase == "false"
+                    {
                         Spacer()
-                        Appearance(isDark: $isDark)
-                            .preferredColorScheme(isDark ? .dark : .light)
-                    }.frame(width: (screen?.width ?? 100) * 0.60)
-                    //                    .border(Color.pink, width: 3)
-                }
-                if lap234Purchase == "true"
-                {
-                    Spacer()
-                        .frame(height: 5)
-                    HStack{
-                        Spacer()
-                            .frame(height: 50)
-                        Appearance(isDark: $isDark)
-                            .preferredColorScheme(isDark ? .dark : .light)
-                    }.frame(width: (screen?.width ?? 100) * 0.60)
-                }
-                Spacer()
-                HStack{
-                    if stopWatchManeger.hour > 9 {
-                        Text(String(format: "%02d:%02d:%02d.%02d", stopWatchManeger.hour, stopWatchManeger.minutes, stopWatchManeger.second, stopWatchManeger.milliSecond))
-                            .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.10))
-                            .font(.system(size: 60, design: .monospaced))
-                            .foregroundColor(Color("Colormoji"))
-                        
-                    } else if stopWatchManeger.hour > 0 {
-                        Text(String(format: "%01d:%02d:%02d.%02d", stopWatchManeger.hour, stopWatchManeger.minutes, stopWatchManeger.second, stopWatchManeger.milliSecond))
-                            .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.11))
-                            .font(.system(size: 65, design: .monospaced))
-                            .foregroundColor(Color("Colormoji"))
-                        
-                    } else {
-                        Text(String(format: "%02d:%02d.%02d", stopWatchManeger.minutes, stopWatchManeger.second, stopWatchManeger.milliSecond))
-                            .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.13))
-                            .font(.system(size: 0, design: .monospaced))
-                            .foregroundColor(Color("Colormoji"))
-                        
-                    }
-                }.frame(width: (screen?.width ?? 100) * 0.60)
-                //                .border(Color.pink, width: 3)
-                Spacer()
-                    .frame(height: (screen?.height ?? 100) * 0.08)
-                
-                HStack {
-                    if stopWatchManeger.mode == .stop{
+                            .frame(height: 5)
                         HStack{
-                            Button(action: {
-                                self.stopWatchManeger.start()
-                            }){
-                                TextView(label : "スタート")
-                            }
-                            Spacer().frame(width: 15)
-                            Button(action: {
+                            AdView()
+                                .frame(height: 50)
+                            Spacer()
+                            Appearance(isDark: $isDark)
+                                .preferredColorScheme(isDark ? .dark : .light)
+                        }.frame(width: (screen?.width ?? 100) * 0.60)
+                        //                    .border(Color.pink, width: 3)
+                    }
+                    if lap234Purchase == "true"
+                    {
+                        Spacer()
+                            .frame(height: 5)
+                        HStack{
+                            Spacer()
+                                .frame(height: 50)
+                            Appearance(isDark: $isDark)
+                                .preferredColorScheme(isDark ? .dark : .light)
+                        }.frame(width: (screen?.width ?? 100) * 0.60)
+                    }
+                    Spacer()
+                    HStack{
+                        if stopWatchManeger.hour > 9 {
+                            Text(String(format: "%02d:%02d:%02d.%02d", stopWatchManeger.hour, stopWatchManeger.minutes, stopWatchManeger.second, stopWatchManeger.milliSecond))
+                                .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.10))
+                                .font(.system(size: 60, design: .monospaced))
+                                .foregroundColor(Color("Colormoji"))
+                            
+                        } else if stopWatchManeger.hour > 0 {
+                            Text(String(format: "%01d:%02d:%02d.%02d", stopWatchManeger.hour, stopWatchManeger.minutes, stopWatchManeger.second, stopWatchManeger.milliSecond))
+                                .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.11))
+                                .font(.system(size: 65, design: .monospaced))
+                                .foregroundColor(Color("Colormoji"))
+                            
+                        } else {
+                            Text(String(format: "%02d:%02d.%02d", stopWatchManeger.minutes, stopWatchManeger.second, stopWatchManeger.milliSecond))
+                                .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.13))
+                                .font(.system(size: 0, design: .monospaced))
+                                .foregroundColor(Color("Colormoji"))
+                            
+                        }
+                    }.frame(width: (screen?.width ?? 100) * 0.60)
+                    //                .border(Color.pink, width: 3)
+                    Spacer()
+                        .frame(height: (screen?.height ?? 100) * 0.08)
+                    
+                    HStack {
+                        if stopWatchManeger.mode == .stop{
+                            HStack{
+                                Button(action: {
+                                    self.stopWatchManeger.start()
+                                }){
+                                    TextView(label : "スタート")
+                                }
+                                Spacer().frame(width: 15)
+                                Button(action: {
+                                    
+                                }){
+                                    TextView(label : "一時停止")
+                                }
                                 
-                            }){
-                                TextView(label : "一時停止")
+                                Spacer().frame(width: 15)
+                                Button(action: {
+                                    stopWatchManeger.hour = 00
+                                    stopWatchManeger.minutes = 00
+                                    stopWatchManeger.second = 00
+                                    stopWatchManeger.milliSecond = 00
+                                    self.stopWatchManeger.stop()
+                                }){
+                                    TextView(label : "リセット")
+                                }
                             }
-                            
-                            Spacer().frame(width: 15)
-                            Button(action: {
-                                stopWatchManeger.hour = 00
-                                stopWatchManeger.minutes = 00
-                                stopWatchManeger.second = 00
-                                stopWatchManeger.milliSecond = 00
-                                self.stopWatchManeger.stop()
-                            }){
-                                TextView(label : "リセット")
+                        }
+                        if stopWatchManeger.mode == .start{
+                            HStack{
+                                Button(action: {
+                                    self.stopWatchManeger.stop()
+                                    self.stopWatchManeger.start()
+                                }){
+                                    TextView2(label : "スタート")
+                                }
+                                Spacer().frame(width: 15)
+                                Button(action: {
+                                    self.stopWatchManeger.pause()
+                                }){
+                                    TextView(label : "一時停止")
+                                }
+                                Spacer().frame(width: 15)
+                                Button(action: {
+                                    stopWatchManeger.hour = 00
+                                    stopWatchManeger.minutes = 00
+                                    stopWatchManeger.second = 00
+                                    stopWatchManeger.milliSecond = 00
+                                    self.stopWatchManeger.stop()
+                                }){
+                                    TextView(label : "リセット")
+                                }
+                            }
+                        }
+                        
+                        if stopWatchManeger.mode == .pause{
+                            HStack{
+                                Button(action: {
+                                    self.stopWatchManeger.start()
+                                }){
+                                    TextView(label : "再開")
+                                }
+                                Spacer().frame(width: 15)
+                                
+                                Button(action: {
+                                    self.stopWatchManeger.start()
+                                }){
+                                    TextView2(label : "一時停止")
+                                }.disabled(true)
+                                Spacer().frame(width: 15)
+                                Button(action: {
+                                    stopWatchManeger.hour = 00
+                                    stopWatchManeger.minutes = 00
+                                    stopWatchManeger.second = 00
+                                    stopWatchManeger.milliSecond = 00
+                                    self.stopWatchManeger.stop()
+                                }){
+                                    TextView(label : "リセット")
+                                }
                             }
                         }
                     }
-                    if stopWatchManeger.mode == .start{
-                        HStack{
-                            Button(action: {
-                                self.stopWatchManeger.stop()
-                                self.stopWatchManeger.start()
-                            }){
-                                TextView2(label : "スタート")
-                            }
-                            Spacer().frame(width: 15)
-                            Button(action: {
-                                self.stopWatchManeger.pause()
-                            }){
-                                TextView(label : "一時停止")
-                            }
-                            Spacer().frame(width: 15)
-                            Button(action: {
-                                stopWatchManeger.hour = 00
-                                stopWatchManeger.minutes = 00
-                                stopWatchManeger.second = 00
-                                stopWatchManeger.milliSecond = 00
-                                self.stopWatchManeger.stop()
-                            }){
-                                TextView(label : "リセット")
-                            }
-                        }
-                    }
-                    
-                    if stopWatchManeger.mode == .pause{
-                        HStack{
-                            Button(action: {
-                                self.stopWatchManeger.start()
-                            }){
-                                TextView(label : "再開")
-                            }
-                            Spacer().frame(width: 15)
-                            
-                            Button(action: {
-                                self.stopWatchManeger.start()
-                            }){
-                                TextView2(label : "一時停止")
-                            }.disabled(true)
-                            Spacer().frame(width: 15)
-                            Button(action: {
-                                stopWatchManeger.hour = 00
-                                stopWatchManeger.minutes = 00
-                                stopWatchManeger.second = 00
-                                stopWatchManeger.milliSecond = 00
-                                self.stopWatchManeger.stop()
-                            }){
-                                TextView(label : "リセット")
-                            }
-                        }
-                    }
+                    Spacer()
                 }
-                Spacer()
+                Spacer().frame(width: 25)
             }
-            //            .border(Color.pink, width: 3)
-            Spacer().frame(width: 25)
+            
+            
+            
         }.ignoresSafeArea(edges: [.bottom , .top ])
         //        .border(Color.blue, width: 3)
             .fullScreenCover(isPresented: self.$isActive){
@@ -393,6 +362,10 @@ struct ContentView: View {
                     }
             }
             .onAppear(perform: {
+                
+                if firstLaunch {
+                    isActive = true
+                }
                 //--------○回起動毎にレビューを促す--------
                 kidou += 1
                 if kidou <= 60 {
@@ -413,28 +386,23 @@ struct ContentView: View {
                 getTimeComponents()
             }
     }
-}
-
-
-
-
-
-
-private func getTime() -> String {
-    let format = DateFormatter()
-    format.dateFormat = "yyyy年MM月dd日(E)"
-    return format.string(from: Date())
-}
-
-private func getTimeComponents() {
-    let calender = Calendar.current
-    let sec = calender.component(.second, from: Date())
-    let min = calender.component(.minute, from: Date())
-    let hour = calender.component(.hour, from: Date())
-    withAnimation(Animation.linear(duration: 0.01)) {
-        currentTime = Time(sec: sec, min: min, hour: hour)
+    
+    
+    private func getTime() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy年MM月dd日(E)"
+        return format.string(from: Date())
     }
-}
+    
+    private func getTimeComponents() {
+        let calender = Calendar.current
+        let sec = calender.component(.second, from: Date())
+        let min = calender.component(.minute, from: Date())
+        let hour = calender.component(.hour, from: Date())
+        withAnimation(Animation.linear(duration: 0.01)) {
+            currentTime = Time(sec: sec, min: min, hour: hour)
+        }
+    }
 }
 
 struct clockFace: View {
