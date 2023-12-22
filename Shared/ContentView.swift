@@ -44,6 +44,32 @@ struct ContentView: View {
             Spacer().frame(width: 25)
             
             if UIScreen.main.bounds.size.height == 375.0 {
+                ZStack{
+                    HStack{
+                        Spacer()
+                            .frame(width: 5)
+                        VStack{
+                            Spacer()
+                                .frame(height: 5)
+                            Appearance(isDark: $isDark)
+                                .preferredColorScheme(isDark ? .dark : .light)
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                    VStack {
+                        Spacer()
+                        clockFace(isDark: $isDark, currentTime: $currentTime)
+                        Spacer()
+                        Text(getTime())
+                        Text(String(format: "%02d:%02d.%02d",currentTime.hour, currentTime.min, currentTime.sec))      // HH:mm:ssで表示する
+                            .font(Font(UIFont.monospacedDigitSystemFont(ofSize: 50, weight: .heavy)))   //等幅フォントを指定（時刻変化でサイズが変わらないように
+                            .foregroundColor(Color("Colormoji"))
+                        //                    Spacer()
+                    }
+//                    .border(Color.gray, width: 3)
+                }
+
                 
                 VStack {
                     Spacer()
@@ -63,16 +89,15 @@ struct ContentView: View {
                         Spacer()
                             .frame(height: 5)
                         HStack{
+                            Spacer()
                             AdView()
                                 .frame(height: 50)
+//                                .border(Color.purple, width: 3)
                             Spacer()
-                            Appearance(isDark: $isDark)
-                                .preferredColorScheme(isDark ? .dark : .light)
-                            Spacer()
-                                .frame(width: 50)
-                        }
-//                        .border(Color.pink, width: 3)
-                        .frame(width: (screen?.width ?? 100) * 0.60)
+//                            Appearance(isDark: $isDark)
+//                                .preferredColorScheme(isDark ? .dark : .light)
+                        }.frame(width: (screen?.width ?? 100) * 0.60)
+//                                            .border(Color.pink, width: 3)
                     }
                     if lap234Purchase == "true"
                     {
@@ -202,7 +227,11 @@ struct ContentView: View {
                 
                 ZStack{
                     HStack{
+                        Spacer()
+                            .frame(width: 5)
                         VStack{
+                            Spacer()
+                                .frame(height: 5)
                             Appearance(isDark: $isDark)
                                 .preferredColorScheme(isDark ? .dark : .light)
                             Spacer()
@@ -219,7 +248,7 @@ struct ContentView: View {
                             .foregroundColor(Color("Colormoji"))
                         //                    Spacer()
                     }
-                    .border(Color.gray, width: 3)
+//                    .border(Color.gray, width: 3)
                 }
                 VStack{
                     
@@ -228,14 +257,15 @@ struct ContentView: View {
                         Spacer()
                             .frame(height: 5)
                         HStack{
+                            Spacer()
                             AdView()
                                 .frame(height: 50)
-                                .border(Color.purple, width: 3)
+//                                .border(Color.purple, width: 3)
                             Spacer()
-                            Appearance(isDark: $isDark)
-                                .preferredColorScheme(isDark ? .dark : .light)
+//                            Appearance(isDark: $isDark)
+//                                .preferredColorScheme(isDark ? .dark : .light)
                         }.frame(width: (screen?.width ?? 100) * 0.60)
-                                            .border(Color.pink, width: 3)
+//                                            .border(Color.pink, width: 3)
                     }
                     if lap234Purchase == "true"
                     {
@@ -270,7 +300,7 @@ struct ContentView: View {
                             
                         }
                     }.frame(width: (screen?.width ?? 100) * 0.60)
-                                    .border(Color.yellow, width: 3)
+//                                    .border(Color.yellow, width: 3)
                     Spacer()
                         .frame(height: (screen?.height ?? 100) * 0.08)
                     
@@ -357,7 +387,7 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
-                .border(Color.blue, width: 3)
+//                .border(Color.blue, width: 3)
                 Spacer()
             }
             
