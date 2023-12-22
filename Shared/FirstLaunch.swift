@@ -59,7 +59,7 @@ struct FirstLaunch: View {
                         firstLaunch2 = false
                     })
                     {
-                        TextView4(label : "確認しました。")
+                        TextView5(label : "確認しました。")
                     }
                     .buttonStyle(MyButtonStyle2())
                         Spacer()

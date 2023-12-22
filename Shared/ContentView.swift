@@ -11,7 +11,7 @@ struct AdView: UIViewRepresentable {
         banner.adUnitID = "ca-app-pub-1023155372875273/3435791554"
         
         // 以下は、バナー広告向けのテスト専用広告ユニットIDです。自身の広告ユニットIDと置き換えてください。
-        //                banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//                        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         banner.rootViewController = UIApplication.shared.windows.first?.rootViewController
         banner.load(GADRequest())
         return banner
@@ -71,8 +71,8 @@ struct ContentView: View {
                             Spacer()
                                 .frame(width: 50)
                         }
+//                        .border(Color.pink, width: 3)
                         .frame(width: (screen?.width ?? 100) * 0.60)
-                        //                    .border(Color.pink, width: 3)
                     }
                     if lap234Purchase == "true"
                     {
@@ -92,7 +92,7 @@ struct ContentView: View {
                     HStack{
                         if stopWatchManeger.hour > 9 {
                             Text(String(format: "%02d:%02d:%02d.%02d", stopWatchManeger.hour, stopWatchManeger.minutes, stopWatchManeger.second, stopWatchManeger.milliSecond))
-                                .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.10))
+                                .font(Font.custom("HiraginoSans-W3", size: (screen?.width ?? 100) * 0.09))
                                 .font(.system(size: 60, design: .monospaced))
                                 .foregroundColor(Color("Colormoji"))
                             
@@ -147,7 +147,7 @@ struct ContentView: View {
                                     self.stopWatchManeger.stop()
                                     self.stopWatchManeger.start()
                                 }){
-                                    TextView4(label : "すタート")
+                                    TextView4(label : "スタート")
                                 }
                                 Spacer().frame(width: 15)
                                 Button(action: {
@@ -200,17 +200,27 @@ struct ContentView: View {
                 Spacer().frame(width: 25)
             } else {
                 
-                VStack {
-                    Spacer()
-                    clockFace(isDark: $isDark, currentTime: $currentTime)
-                    Spacer()
-                    Text(getTime())
-                    Text(String(format: "%02d:%02d.%02d",currentTime.hour, currentTime.min, currentTime.sec))      // HH:mm:ssで表示する
-                        .font(Font(UIFont.monospacedDigitSystemFont(ofSize: 50, weight: .heavy)))   //等幅フォントを指定（時刻変化でサイズが変わらないように
-                        .foregroundColor(Color("Colormoji"))
-                    Spacer()
+                ZStack{
+                    HStack{
+                        VStack{
+                            Appearance(isDark: $isDark)
+                                .preferredColorScheme(isDark ? .dark : .light)
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                    VStack {
+                        Spacer()
+                        clockFace(isDark: $isDark, currentTime: $currentTime)
+                        Spacer()
+                        Text(getTime())
+                        Text(String(format: "%02d:%02d.%02d",currentTime.hour, currentTime.min, currentTime.sec))      // HH:mm:ssで表示する
+                            .font(Font(UIFont.monospacedDigitSystemFont(ofSize: 50, weight: .heavy)))   //等幅フォントを指定（時刻変化でサイズが変わらないように
+                            .foregroundColor(Color("Colormoji"))
+                        //                    Spacer()
+                    }
+                    .border(Color.gray, width: 3)
                 }
-                //        .border(Color.gray, width: 3)
                 VStack{
                     
                     if lap234Purchase == "false"
@@ -220,11 +230,12 @@ struct ContentView: View {
                         HStack{
                             AdView()
                                 .frame(height: 50)
+                                .border(Color.purple, width: 3)
                             Spacer()
                             Appearance(isDark: $isDark)
                                 .preferredColorScheme(isDark ? .dark : .light)
                         }.frame(width: (screen?.width ?? 100) * 0.60)
-                        //                    .border(Color.pink, width: 3)
+                                            .border(Color.pink, width: 3)
                     }
                     if lap234Purchase == "true"
                     {
@@ -259,7 +270,7 @@ struct ContentView: View {
                             
                         }
                     }.frame(width: (screen?.width ?? 100) * 0.60)
-                    //                .border(Color.pink, width: 3)
+                                    .border(Color.yellow, width: 3)
                     Spacer()
                         .frame(height: (screen?.height ?? 100) * 0.08)
                     
@@ -346,7 +357,8 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
-                Spacer().frame(width: 25)
+                .border(Color.blue, width: 3)
+                Spacer()
             }
             
             

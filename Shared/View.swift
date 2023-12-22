@@ -63,6 +63,23 @@ struct TextView4: View {
     var body: some View {
         Text(label)
             .font(.title2)
+            .frame(width: 110, height: 120, alignment: .center)
+            .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color.blue, lineWidth: 5)
+            )
+            .foregroundColor(Color("Colormoji3"))
+            .background(Color(.blue))
+    }
+}
+
+struct TextView5: View {
+    
+    var label : String
+    
+    var body: some View {
+        Text(label)
+            .font(.title2)
             .frame(width: 180, height: 80, alignment: .center)
             .overlay(
                 RoundedRectangle(cornerRadius: 5)
